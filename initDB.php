@@ -23,6 +23,5 @@ if (!$results){
     if ($conn->query($sql)!=TRUE) {
         echo "Table creation was not successfull";
     }
-
 }
 ?>

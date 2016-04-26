@@ -23,10 +23,9 @@
     <!---------------- NOW THE IMPORTANT STUFF ------------ -->
     <?
     include initDB.php;
+    
+    
     ?>
-    
-    
-    
 </head>
 <body>
 
