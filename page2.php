@@ -1,20 +1,22 @@
 <html>
-<h1> Processing... </h1>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="Chart.js-master/Chart.js"></script>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="Chart.js-master/Chart.js"></script>
+        
+    </head>
+    <body> 
+        <h1> Here's the chart now </h1>
+            <div id="yo">
+            hey. been dying, to meet you. 
+            </div>
+            <div id = "chartDiv" style="width:100%;height:50%;">
+                        <canvas id="lineChart" style="width:100%;height:50%;"></canvas>
+            </div>  
+    </body>
+   
 <script>
-    
- var file;
-var file = "# Count File for trans0_track1.>trans0_track1 Cardinality27.01 13674.0i 34.0j 1.12 13665.1i 43.20 13618.2i 58.2j 32.AC 50363.AI 263.Aj 102.BA 50560.BI 168.CB 50596.CI 131.IA 168.IB 131.IC 263.II 197322.i0 58.i1 34.i2 43.ii 74470.j0 33.jB 1.jC 101.jj 14289158";   
-//make array of all the lines    
-delimiter = '.' ; //make it  so that it's dynamic
-var lines = file.split(delimiter);
+//------------------------------------- jSon object we're adapting to ------------------------------------------
 
-//read first two lines
-//first line is unimportant
-//second line is the title 
-var title = lines[1]; 
- 
 //initialize the object
 var lineData = {
     labels: [],
@@ -30,8 +32,19 @@ var lineData = {
     
     ]
 } 
+    
+    
+//-------------------------------------- Processing the output 'file' -------------------------------------------
 
+//hard coded test data
+var file = "# Count File for trans0_track1.>trans0_track1 Cardinality27.01 13674.0i 34.0j 1.12 13665.1i 43.20 13618.2i 58.2j 32.AC 50363.AI 263.Aj 102.BA 50560.BI 168.CB 50596.CI 131.IA 168.IB 131.IC 263.II 197322.i0 58.i1 34.i2 43.ii 74470.j0 33.jB 1.jC 101.jj 14289158";   
+//make array of all the lines    
+delimiter = '.' ; //make it  so that it's dynamic
+var lines = file.split(delimiter);
 
+//first line is unimportant, second line is the title 
+var title = lines[1]; 
+ 
 //convert structure into the object
 for (var i = 2;i < lines.length; i ++ ){
     var line = lines[i];
@@ -42,27 +55,16 @@ for (var i = 2;i < lines.length; i ++ ){
     //then, add to the data structure
     lineData.labels.push(label);
     lineData.datasets[0].data.push(dataVal);
+    console.log(lineData.datasets[0].data)
     
 }
-
 console.log(lineData);
 
-    
-    
-    
-    
-</script> 
-    <div id="yo">
-    hey. been dying, to meet you. 
-    </div>
-    <div id = "chartDiv">
-                <canvas id="lineChart"></canvas>
-    </div>
+//---------------------------------------------- now create the chart itself ---------------------------------------------
 
-    
-<script>
-    var ctx = document.getElementById("lineChart").getContext("2d");
-    var myNewChart = new Chart(ctx).Line(lineData);
-    
-</script>
+var ctx = document.getElementById("lineChart").getContext("2d");
+var myNewChart = new Chart(ctx).Line(lineData);
+</script> 
+
+
 </html>
