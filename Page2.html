@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>page1</title>
+
+      <style type="text/css">
+		 body{
+              background: Yellow;
+              margin: 30px;
+              text-align: center;
+          }
+          #About{
+    		background-color: #4CAF50;
+    		/*border: none;*/
+		    color: black;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		}
+          
+          #myFile{
+			color: black;
+		    padding: 15px 32px;
+		    text-align: center;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+          }
+
+          #Aboutdiv{
+          	text-align: right;
+          }
+
+         #Text{
+         	text-align: left;
+         }
+
+         #HW{
+         	text-align: left;
+         }
+         #Run{
+         	background-color: #4CAF50;
+         	float: left;
+         	color: black;
+		    padding: 15px 32px;
+		    text-align: center;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+         }
+	</style>
+
+</head>
+
+<body>
+
+<h1><font size="50">Gene Splice</font></h1>	
+
+<!-- <h1 id="Title">Gene Splice</h1> -->
+<div id="Aboutdiv">
+<button id= "About" type="button" onclick="alert('The purpose of this project will be to develop software tools for Meta-Logos. This will include tools for aiding the deciphering and predicting alternative splicing site from a given genome (c.elegans)')">About</button>
+<button id= "About" type="button" onclick="alert('Credits to our work!!')">Credit </button>
+</div>
+
+<!-- <button id= "About" type="button" onclick="alert('Credits to our work!!')">Credit </button> -->
+
+<p align="left"> <font size="5">Now test and display your spliced results using either an uploaded file or some of our stored test data!</font></p>
+
+<div id= "Text">
+<button  id= "About" align= "left" type="button">C.elegans data</button>
+
+</div>
+
+<div id="HW">
+<p align="left"> <font size="5"> Input from computer: </p>
+<form action="localhost">
+<input accept=".fasta.txt" type="file" id="myFile"> 
+Email: <input type="text" name="Email" value=email>
+<input type ="submit" value ="Run"><br>
+</form>
+
+<!-- <button id= "Run" align= "left" type="button" onclick="alert('Please insert email <input type ="text" name="Email" value=email')"/>Run</button> -->
+
+
+</div>
+
+</form>
+</body>
+</html>
