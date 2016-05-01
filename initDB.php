@@ -24,4 +24,6 @@ if (!$results){
         echo "Table creation was not successfull";
     }
 }
+
+
 ?>
