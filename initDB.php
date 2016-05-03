@@ -8,7 +8,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     echo("failure to connect to database");
 } 
-
+else {
+    echo("all good");
+}
 $results = $conn->query("SELECT * FROM AGP_db WHERE NAME IS fastaFiles"); //wrong syntax
 echo($results);
 if (!$results){
