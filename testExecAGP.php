@@ -17,7 +17,8 @@ echo "Connected successfully";
 $returnVal = error_log("hello there error log HIIIIII");
 error_log("\n" . $returnVal);
 echo("START THE COOOOOODE ______________________");
-$error = shell_exec("perl ..AGP_things/AGP/GFF_Collect_fromEnsembl3.pl");
-echo($error);
+error_log(exec('perl hello.pl'));
+echo("AGAIN _______________________________");
+error_log(exec('perl ../AGP_things/AGP/GFF_Collect_fromEnsembl3.pl'));
 error_log("yup")
 ?>
