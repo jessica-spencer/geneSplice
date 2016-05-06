@@ -17,11 +17,11 @@ echo "Connected successfully";
 error_log("START THE COOOOOODE ______________________");
 //error_log("AGAIN _______________________________");
 error_log(exec('pwd'));
-chdir('../AGP_things/AGP');
+//chdir('../AGP_things/AGP');
 error_log("----running code ----");
 //error_log(exec('cd ../AGP_things/AGP'));
 error_log(exec('pwd'));
-error_log(exec('perl Ensembl_Parser2.pl Mus_musculus.GRCm38.84.gtf'));
+error_log(exec('perl ../AGP_things/AGP/Ensembl_Parser2.pl Mus_musculus.GRCm38.84.gtf'));
 //error_log($result);
 error_log("end-----------------------")
 ?>
