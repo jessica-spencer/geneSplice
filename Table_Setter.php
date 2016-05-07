@@ -19,7 +19,8 @@ function main($file,$email){
     if(isFile($file)==TRUE){
         echo("<br> The file exists <br>");
         //get file ID
-        $id = '123456';
+        $id = getID($file);
+        print_r($id);
         //send mail
         sendMail($email,$id);
         
@@ -30,23 +31,41 @@ function main($file,$email){
         echo("<br> run code............ <br>");
         $perlCode = 'hello.pl';
         $parameter = '';
+        // FIRST! create array of all files in directory 
+        $dir = ".";
+        $filesAtFirst = scandir($dir);
         
+        //THEN! run WH's code 
         //execPerl($perlCode, $parameter);
-        
         //for testing use helloExec()
+         echo("0");
         helloExec($perlCode,$parameter);
-        
+        echo("1");
+        //NEXT! see what files were created by comparing then to now
+        $filesNow = scandir($dir);
+        $outputFiles = array_diff($filesNow,$filesAtFirst);
+        echo("2");
+        print_r($outputFiles);
+        //THEN! put those file names on the server
+        //$diffLen = count($outputFiles);
+        //echo($diffLen);
+        echo("3");
+        foreach ($outputFiles as $outFile) {
+            echo("name of out file is : ". $outFile . "<br>");
+            insert($file, $outFile);
+            
+        }
+        echo("4");
         //put output FILE NAMES on server so we can know which
         //ones to access later
-        
-        $id = 'WAT NOW BITCHES SENT AN EMAIL';
+        $id = getID($file);
+        echo("5");
         //then do email thing
         sendMail($email,$id);
         
     }
 
 }
-
 
 main($name,$email);
 ?>

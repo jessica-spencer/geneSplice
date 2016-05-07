@@ -48,6 +48,9 @@ function isFile($filename){
     
    // checks for the file name
    $fileCheck = "SELECT * FROM `fastaFiles` WHERE fileName ='" . $filename . "'";
+    echo("<br><br> this is the first query isFile()<br>");
+    echo($fileCheck . "<br><br>");
+    
    // assigns the fileCheck to a new variable results
    $results = $conn->prepare($fileCheck);
     $results->execute();
@@ -84,15 +87,60 @@ function insert($filename,$outputFiles) {
     }
     $date = date("Y/m/d");
 
-    $request = "INSERT INTO fastaFiles(id, fileName, outputFiles, reg_date) VALUES(0,'" . $filename . "','". $outputFiles . "','" . $date . "'";
+    $request = "INSERT INTO fastaFiles(id, fileName, outputFiles, reg_date) VALUES(0,'" . $filename . "','". $outputFiles . "','" . $date . "');";
+    echo("request:  " . $request );
     $results = $conn->query($request);
-    if ($conn->query($request) === TRUE) {
+    if ($results === TRUE) {
     echo "New record created successfully";
     } else {
-    echo  $sql . "<br>" . $conn->error;
+    echo  $conn->error;
     }
     $conn->close();
  }
 
+/****************************************************************************
+* get ID function gets the ID of the row that contains the file + output files etc. 
+****************************************************************************/
+function getID($fileName) {
+    //connect
+    $servername = "localhost";
+    // Create connection
+    $conn = new mysqli($servername, "", "","AGP_db");
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        echo("failure to connect to database");
+    } 
+    else {
+        echo("all good");
+    }
+
+    $request = "SELECT * FROM `fastaFiles` WHERE fileName = '" . $fileName .  "';";
+    $results = $conn->prepare($request);
+    $results->execute();
+   // $row = $results->num_rows;
+   
+    $results->store_result();
+    $results->bind_result($id, $fileName, $outputFile, $date);
+    while($results->fetch()){
+        $idOut = $id;
+        echo 'this is your out ID + File: ' . $id . "---   " . $outputFile . "<br>";
+    }
+    
+    
+    if ($id !== null) {
+        return $idOut;
+    } 
+    else {
+        echo("error: <br>");
+        echo  $conn->error;
+        return null;
+    }
+    
+        
+        
+    $conn->close();
+    
+}
 
 ?>
