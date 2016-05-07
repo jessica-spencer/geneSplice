@@ -1,10 +1,6 @@
 <?
 if(null!==($_POST["Run"])) {
     
-    //----------Debug for email and file -------//
-    
-        $filePlace = $_FILES['fileName']['tmp_name'];
-        $fileName = $_FILES['fileName']['name'];
     //-------------------------------------------//
     
     //----------- check for email, and email validity ---------------//
@@ -12,6 +8,7 @@ if(null!==($_POST["Run"])) {
     if(isset($_POST['Email']) && !empty($_POST['Email'])) {
             if(filter_var($_POST['Email'], FILTER_VALIDATE_EMAIL)) {
             // valid address
+                $email=$_POST['Email'];
             }
             else {
                 // invalid address
@@ -38,7 +35,9 @@ if(null!==($_POST["Run"])) {
 
     if (($extension=='txt')&&$type=='text/plain') {
         echo "File Uploaded";
-    }else{
+        //$file = file_get_contents($_Files['fileName']['tmp_name']);
+    }
+    else{
         echo"File must be txt";
     }
         
@@ -49,4 +48,8 @@ else {
     echo("<button href='Page2.html'>Return to Main Page</button>");
 }
 }
+
+include("Table_Setter.php");
+
+
 ?>

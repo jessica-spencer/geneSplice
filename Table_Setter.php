@@ -1,11 +1,14 @@
 <?php
 include("initDB.php");
 include("Email.php");
-
-$inFile = "sdfsdfsdfsf";
-$email = "kjkjkj@yahoo.edu";
+include("testExecAGP.php");
 
 /******************************************************************************
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+$name (file name) and $email come frome delegateInput.php, which includes this file after it runs 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 * Main completes the table. We check to see if the input file has already been
 * used and has an output file. If this is true, we send the email. If this is
 * false, we run the Winters-Hilt code and complete our table with the number,
@@ -27,12 +30,23 @@ function main($file,$email){
         echo("<br> run code............ <br>");
         $perlCode = 'hello.pl';
         $parameter = '';
-        execPerl($perlCode, $parameter);
-        //put output on server
+        
+        //execPerl($perlCode, $parameter);
+        
+        //for testing use helloExec()
+        helloExec($perlCode,$parameter);
+        
+        //put output FILE NAMES on server so we can know which
+        //ones to access later
+        
+        $id = 'WAT NOW BITCHES SENT AN EMAIL';
         //then do email thing
+        sendMail($email,$id);
         
     }
 
 }
-main($inFile,$email);
+
+
+main($name,$email);
 ?>

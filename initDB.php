@@ -56,17 +56,10 @@ function isFile($filename){
     if ($row !== 0) {
          // file is already in table
          echo "File Already Exists";
-         // returns true value
          return TRUE;
-       //if not a file
     } 
     else {
-     // insert the file to the table, calling insert method
          echo("file does not exist");
-         insert($filename);
-         // echos file does not Exists
-         echo "File Does Not Exist";
-         // return false value
          return FALSE;
    }
     $conn->close();

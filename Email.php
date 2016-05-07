@@ -19,7 +19,7 @@ function sendMail($address,$id) {
 
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: Noreply <noreply@example.com>' . "\r\n";
+    $headers .= 'From: Metalogos Alt Splice <noreply@example.com>' . "\r\n";
 
     $mail = mail($mailacc, $subject, $message, $headers);
 }
