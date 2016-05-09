@@ -93,7 +93,7 @@ function insert($filename,$outputFiles) {
     if ($results === TRUE) {
     echo "New record created successfully";
     } else {
-    echo  $conn->error;
+        echo  $conn->error;
     }
     $conn->close();
  }

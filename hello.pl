@@ -8,7 +8,8 @@
 
   # Print a message.
   print "Hello, World!\n";
-  my $file = "jhjhjhjhj.txt";
+  $numFile = rand();
+  my $file = $numFile . ".txt";
   unless(open FILE, '>'.$file){
     die"\nUnable to create $file\n";
   }

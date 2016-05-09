@@ -27,8 +27,11 @@ function execPerl ($perlFile,$parameters) {
     //error_log(exec('perl ../AGP_things/AGP/Ensembl_Parser2.pl Mus_musculus.GRCm38.84.gtf'));
     //error_log($result);
     error_log("end-----------------------");
+    
 }
 //execPerl('Ensembl_Parser2.pl','Mus_musculus.GRCm38.84.gtf');
+execPerl('Ensembl_Parser2.pl','Mus_musculus.GRCm38.84.gtf');
+
 
 function helloExec ($perlFile,$parameters) {
     $servername = "localhost";

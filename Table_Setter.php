@@ -50,7 +50,7 @@ function main($file,$email){
         //$diffLen = count($outputFiles);
         //echo($diffLen);
         echo("3");
-        foreach ($outputFiles as $outFile) {
+        foreach ($outputFiles as &$outFile) {
             echo("name of out file is : ". $outFile . "<br>");
             insert($file, $outFile);
             
