@@ -4,6 +4,8 @@ if(null!==($_POST["Run"])) {
     //-------------------------------------------//
     
     //----------- check for email, and email validity ---------------//
+    $error = "";
+    
     
     if(isset($_POST['Email']) && !empty($_POST['Email'])) {
             if(filter_var($_POST['Email'], FILTER_VALIDATE_EMAIL)) {
@@ -12,12 +14,14 @@ if(null!==($_POST["Run"])) {
             }
             else {
                 // invalid address
-                echo("nope, try again\n");
+                $error = $error . " invalid email address";
+                //echo("nope, try again\n");
             }
         }
         else{
-            echo("no email\n");
-            echo($_POST['Email']);
+            $error = $error . " invalid email address";
+            //echo("no email\n");
+            //echo($_POST['Email']);
         }
     
     //--------- check for file, and file validity ------------------//
@@ -34,22 +38,26 @@ if(null!==($_POST["Run"])) {
     if (!empty($name)){
     //remember to change to gtf
     if (($extension=='txt')&&$type=='text/plain') {
-        echo "File Uploaded";
-        //$file = file_get_contents($_Files['fileName']['tmp_name']);
+        $file = file_get_contents($_FILES['fileName']['tmp_name']);
     }
     else{
-        echo"File must be txt";
+        $error = $error . " File must be have .gtf extension";
     }
         
     }
 }
 else {
-    echo("error - file and email not properly set");
-    echo("<button href='Page2.html'>Return to Main Page</button>");
+    $error=$error . " file not properly set";
+    
 }
 }
-
-include("Table_Setter.php");
-
+if ($error != ""){
+    //there is an error
+    //go to infoPage.html
+    include("information page.html");
+}
+else {
+    include("Table_Setter.php");
+}
 
 ?>

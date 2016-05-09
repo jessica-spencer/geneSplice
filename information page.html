@@ -1,18 +1,15 @@
 <html>
 <head>
 
-    <title>information page</title>
+    <title>input error</title>
 
 
 </head>
 
 <body align= "center">
-
-  <h1 align="center" style="text-align:center;" >Sorry,the email address is wrong !</h1>
-  <h2 align="center" style="text-align:center;" >Sorry,the file type uploaded is wrong !</h2>
-
+<h1 align="center" style="text-align:center;">Oh no! Something is wrong with your input. </h1>
+  <h2 align="center" style="text-align:center;" ><? echo($error); ?> </h1>
   <button align="center" id="buttonGoback" class="button" onclick="goBack()">Go Back</button>
-
 
 <script>
 function goBack() {

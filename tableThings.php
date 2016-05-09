@@ -48,23 +48,5 @@ function getFile($filename) {
     echo "Error: there is not file with that name" . $sql . "<br>" . $conn->error;
     }
 }
-/*function emailInsert($email,$fileName) {
-    $request = "INSERT INTO emailTable (email, fileName) VALUES (" . $email .  "," . $fileName . ")";
-    $results = $conn->query($request);
-    
-}
-function getEmail($)*/
-
-function run(){
-    if($conn->insert()){
-        $results.insert()
-    }
-    if ($conn->isFile()) {
-        $results.isFile()
-    }
-    if ($conn->getFile) {
-        $results.getFile()
-    }
-}
 
 ?>
