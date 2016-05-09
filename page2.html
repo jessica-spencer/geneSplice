@@ -1,7 +1,16 @@
 <html>
 <head>
 <title>page1</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    
       <style type="text/css">
 		 body{
               background: White;
@@ -38,6 +47,7 @@
          }
          #HW{
          	text-align: left;
+            background-color: #f2f2f2;
          }
          #Run{
          	background-color: #4CAF50;
@@ -64,27 +74,31 @@
 <p align="left"> <font size="5">The purpose of this project will be to develop software tools for Meta-Logos. This will include tools for aiding the deciphering and predicting alternative splicing site from a given genome (c.elegans)
 <!-- <button id= "About" type="button" align="right" >Credit </button> -->
 </div>
-<p><img src="logo.png" alt="Meta Logos Systems" width="540" height= "533" align="center"</p>
+    <hr>
+<div class="col-md-6">
+<img src="logo.png" alt="Meta Logos Systems" width="450" height= "350"/>
+</div>
 <!-- <p><img src="logo.png" alt="Meta Logos Systems"
 style="width:540px;height:533px;" align="middle"></p> -->
 
 <!-- <button id= "About" type="button" onclick="alert('Credits to our work!!')">Credit </button> -->
-
+<div class="col-md-6">
 <p align="left"> <font size="5">Now test and display your spliced results using either an uploaded file or some of our stored test data!</font></p>
-
-<div id= "Text">
+</div>
+    
+<div  id= "Text">
 <button  id= "About" align= "left" type="button">C.elegans data</button>
 
 </div>
     
 <div id="error"></div>
 
-<div id="HW">
-<p align="left"> <font size="5"> Input from computer: </p>
-<form method ="post" enctype="multipart/form-data" action="delegateInput.php">
-<input type="file" name="fileName" id="myFile"> 
-Email: <input type="text" name="Email">
-<input type ="submit" name="Run"><br>
+<div class="col-md-12" id="HW" align="center">
+    <p align="center"> <font size="5"><b> Input from computer:</b> </p>
+<form align="center" alignmethod ="post" enctype="multipart/form-data" action="delegateInput.php">
+<input align="center" type="file" name="fileName" id="myFile"> 
+Email: <input align="center" type="text" name="Email">
+<input align="center" type ="submit" name="Run"><br>
 </form>
 
 <!-- <p><img src="logo.png" alt="Meta Logos Systems"

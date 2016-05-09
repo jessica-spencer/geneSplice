@@ -35,7 +35,6 @@ if(null!==($_POST["Run"])) {
     $tmp_name = $_FILES['fileName']['type'];
 
     if (isset($name)) {
-    if (!empty($name)){
     //remember to change to gtf
     if (($extension=='txt')&&$type=='text/plain') {
         $file = file_get_contents($_FILES['fileName']['tmp_name']);
@@ -44,7 +43,7 @@ if(null!==($_POST["Run"])) {
         $error = $error . " File must be have .gtf extension";
     }
         
-    }
+    
 }
 else {
     $error=$error . " file not properly set";
