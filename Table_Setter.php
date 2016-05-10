@@ -37,6 +37,7 @@ function main($file,$email){
        // print_r($id);
         //send mail
         sendMail($email,$id);
+        echo($thanks);
         
     }
     else {
@@ -76,11 +77,11 @@ function main($file,$email){
         //echo("5");
         //then do email thing
         sendMail($email,$id);
-        
+        echo($thanks);
     }
 
 }
-echo($thanks);
+
 
 main($name,$email);
 ?>
